@@ -10,7 +10,11 @@ interface Props{
 function Buscador({busca, setBusca}: Props) {
   return (
     <div className={styles.buscador}>
-      <input value={busca} onChange={() => setBusca}/>
+      <input 
+        value={busca} 
+        onChange={() => setBusca} 
+        placeholder='Buscar'
+      />
       <CgSearch size={20} color="#4C4D5E" />
     </div>
   )
