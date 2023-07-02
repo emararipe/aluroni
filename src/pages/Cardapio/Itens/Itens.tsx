@@ -22,14 +22,21 @@ function Itens({ busca, filtro, ordenador }: Props) {
     return true
   }
 
+  function ordenarCrescente (
+    lista: typeof itens,
+    propriedade: 'size' | 'serving' | 'price'
+  ) {
+    return lista.sort((a, b) => (a[propriedade] > b[propriedade] ? 1 : -1));
+  }
+
   function ordenarLista(lista: typeof itens){
     switch(ordenador){
       case 'porcao':
-        return lista.sort((a, b) => a.size > b.size ? 1 : -1 )
+        return ordenarCrescente(lista, 'size')
       case 'qtd_pessoas':
-        return lista.sort((a, b) => a.serving > b.serving ? 1 : -1 )
+        return ordenarCrescente(lista, 'serving')
       case 'preco':
-        return lista.sort((a, b) => a.price > b.price ? 1 : -1 )
+        return ordenarCrescente(lista, 'price')
       default: 
         return lista
     }
