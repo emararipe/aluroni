@@ -20,7 +20,7 @@
         "react/react-in-jsx-scope": "off",
         "indent": [
             "error",
-            "tab"
+            "tab" 
         ],
         "linebreak-style": [
             "error",
